@@ -6,6 +6,10 @@ const mongoose = require('mongoose'); // Note: Mongoose is imported but not used
 
 const multer = require('multer');
 const FormData = require('form-data');
+const fs = require('fs');
+
+require('dotenv').config();
+
 
 const app = express();
 
@@ -107,6 +111,12 @@ app.post('/api/predict/pneumonia', upload.single('imageFile'), async (req, res) 
         console.error('Error calling Python API (Pneumonia):', error.message);
         res.status(500).json({ error: 'Failed to get prediction from ML service' });
     }
+});
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
 
 // --- Start the Server ---
