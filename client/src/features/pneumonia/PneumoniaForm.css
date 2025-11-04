@@ -1,0 +1,49 @@
+/* src/features/pneumonia/PneumoniaForm.css */
+
+.file-upload-container {
+    margin-bottom: 1.5rem;
+}
+
+/* We hide the default file input */
+.file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Style the custom label to look like a button */
+.file-label {
+    display: block;
+    padding: 1rem;
+    background-color: #f4f4f9;
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #e6f2ff;
+    border-color: #0056b3;
+}
+
+.image-preview-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.image-preview {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
